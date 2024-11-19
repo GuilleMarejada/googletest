@@ -2,9 +2,7 @@
 interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
-import GTM from "../components/GTM.astro";
 ---
 
 <!doctype html>
@@ -15,19 +13,10 @@ import GTM from "../components/GTM.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <GTM />
+
     <title>{title}</title>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-THVV5FQH"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    >
-    <!-- End Google Tag Manager (noscript) -->
     <slot />
   </body>
 </html>
