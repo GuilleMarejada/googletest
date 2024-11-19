@@ -17,10 +17,9 @@ const { title } = Astro.props;
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments);
+        window.dataLayer.push(arguments); // Aquí se hace referencia a window.dataLayer
       }
       gtag("js", new Date());
-
       gtag("config", "G-9L7RVN4SN5");
     </script>
 
