@@ -4,55 +4,30 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Analytics from "@vercel/analytics/astro";
+import GTM from "../components/GTM.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <script type="text/javascript">
-      var _iub = _iub || [];
-      _iub.csConfiguration = {
-        siteId: 3841837,
-        cookiePolicyId: 37087912,
-        lang: "es",
-        storage: { useSiteId: true },
-      };
-    </script>
-    <script
-      type="text/javascript"
-      src="https://cs.iubenda.com/autoblocking/3841837.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.iubenda.com/cs/iubenda_cs.js"
-      charset="UTF-8"
-      async></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      is:inline
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-GLR5L3321T"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments); // Aquí se hace referencia a window.dataLayer
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-GLR5L3321T");
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <GTM />
     <title>{title}</title>
-    <Analytics />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-THVV5FQH"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <slot />
   </body>
 </html>
